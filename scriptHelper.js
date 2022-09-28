@@ -17,11 +17,22 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   
+   if(!testInput){
+    return "Empty";
+   } else {
+    try{
+        Number(testInput);
+        return "Is a Number";
+    } catch (err){
+        return "Not a Number";
+    }
+   }
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+   if(validateInput(pilot) === "Not a Number" && validateInput(copilot) === "Not a Number" && validateInput(fuelLevel) === "Is a Number" && validateInput(cargoLevel) === "Is a Number"){
+    
+   }
 }
 
 async function myFetch() {
